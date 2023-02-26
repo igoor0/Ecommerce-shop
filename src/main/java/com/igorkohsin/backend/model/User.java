@@ -10,7 +10,12 @@ public class User {
     private String id;
     private String firstName;
     private String lastName;
+    private String addressStreet;
+    private String adressCity;
+    private String addressNumber;
+    private String zipCode;
     private String email;
+    private String phoneNumber;
     private String password;
     @Field(name = "enabled")
     private boolean isEnabled;
