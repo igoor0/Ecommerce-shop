@@ -2,7 +2,7 @@ package com.igorkohsin.backend.controller;
 
 import com.igorkohsin.backend.exception.BadRequestException;
 import com.igorkohsin.backend.exception.ConflictException;
-import com.igorkohsin.backend.model.User;
+import com.igorkohsin.backend.model.user.User;
 import com.igorkohsin.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,11 +19,8 @@ public class UserController {
     // (to jest algorytm haszujacy)
     //parametr sorted = wyslesz requesta - dorted=alphabetical i posortuje alfabetycznie i wysle posortowane lol
     //w jsonie wysle obiekt posortowany
-
     @Autowired
     private UserService userService;
-
-
     @PostMapping
     public ResponseEntity addUser(@RequestBody User user) {
         userService.addUser(user);
@@ -42,9 +39,9 @@ public class UserController {
         }
 
         // Check if the user already exists
-        if (userService.getUserByEmail(user.getEmail()) != null) {
-            throw new ConflictException("Username or email already exists");
-        }
+        //if (userService.getUserByEmail(user.getEmail()) != null) {
+        //    throw new ConflictException("Username or email already exists");
+        //}
 
         // Hash the password
         //user.setPassword(passwordEncoder.encode(user.getPassword()));
