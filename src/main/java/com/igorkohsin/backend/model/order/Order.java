@@ -4,6 +4,7 @@ import com.igorkohsin.backend.model.product.Product;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.time.LocalDate;
 
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Document("order")
 public class Order {
+    @MongoId
     @Field("id")
     private String orderId;
     @Field("product")

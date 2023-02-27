@@ -3,6 +3,7 @@ package com.igorkohsin.backend.service;
 import com.igorkohsin.backend.exception.UserIdNotFoundException;
 import com.igorkohsin.backend.model.user.User;
 import com.igorkohsin.backend.repository.UserRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,10 +40,11 @@ public class UserService {
     public void deleteUser(String id) {
         userRepository.deleteById(id);
     }
-    public User getUserByEmail(String id) {
-        return userRepository.findById(id).orElseThrow(() -> new UserIdNotFoundException(id));
-    }
+    //public User getUserByEmail(String id) {return userRepository.findBy(id).orElseThrow(() -> new UserIdNotFoundException(id));}
     public User getUserById(String id) {
         return userRepository.findById(id).orElseThrow(() -> new UserIdNotFoundException(id));
+    }
+
+    public void deleteAllUsers() { userRepository.deleteAll();
     }
 }

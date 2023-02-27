@@ -4,6 +4,7 @@ import com.igorkohsin.backend.exception.BadRequestException;
 import com.igorkohsin.backend.exception.ConflictException;
 import com.igorkohsin.backend.model.user.User;
 import com.igorkohsin.backend.service.UserService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -64,10 +65,13 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
-    @GetMapping("/{email}")
-    ResponseEntity<User> getUserByEmail(@PathVariable String email) {
-        return ResponseEntity.ok(userService.getUserById(email));
+    @DeleteMapping
+    public ResponseEntity deleteAllUsers(){
+        userService.deleteAllUsers();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+    //@GetMapping("/{email}")
+    //ResponseEntity<User> getUserByEmail(@PathVariable String email) {return ResponseEntity.ok(userService.getUserByEmail(email));}
     @GetMapping("/{id}")
     ResponseEntity<User> getUserById(@PathVariable String id) {
         return ResponseEntity.ok(userService.getUserById(id));
