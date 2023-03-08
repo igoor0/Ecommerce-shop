@@ -1,6 +1,5 @@
 package com.igorkohsin.backend.model.product;
 
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,13 +8,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import java.awt.*;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document("product")
+@Document("products")
 public class Product {
     @MongoId
     @Field("id")
@@ -23,11 +20,11 @@ public class Product {
     @Field("name")
     private String productName;
     @Field("sex")
-    private PRODUCT_SEX productSex;
+    private Product_sex productSex;
     @Field("category")
-    private PRODUCT_CATEGORY productCategory;
+    private Product_category productCategory;
     @Field("size")
-    private PRODUCT_SIZE productSize;
+    private Product_size productSize;
     @Field("quantity")
     private Integer productQuantity;
     @Field("img")
@@ -36,4 +33,5 @@ public class Product {
     private double productPrice;
     @Field("available")
     private boolean productAvailable;
+    private double productDiscount;
 }

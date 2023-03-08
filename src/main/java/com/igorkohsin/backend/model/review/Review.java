@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document("review")
+@Document("reviews")
 public class Review {
     @MongoId
     @Field("id")

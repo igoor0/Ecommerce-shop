@@ -1,9 +1,7 @@
 package com.igorkohsin.backend.controller;
 
 import com.igorkohsin.backend.model.order.Order;
-import com.igorkohsin.backend.model.product.Product;
-import com.igorkohsin.backend.model.user.User;
-import com.igorkohsin.backend.service.OrderService;
+import com.igorkohsin.backend.service.impl.OrderServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/v1/order")
 public class OrderController {
     @Autowired
-    private OrderService orderService;
+    private OrderServiceImpl orderService;
 
     @PostMapping()
     public ResponseEntity addOrder(@RequestBody Order order) {

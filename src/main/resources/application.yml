@@ -3,3 +3,12 @@ spring:
     mongodb:
       uri: mongodb+srv://${env.MONGO_USER}:${env.MONGO_PASSWORD}@${env.MONGO_CLUSTER}/?retryWrites=true&w=majority
       database: ${env.MONGO_DATABASE}
+      host: ${env.MONGO_HOST}
+
+    # Path: src/main/resources/application-dev.yml
+    com:
+      igorkohsin:
+          backend:
+            jwtCookieName: ${env.JWT_COOKIE_NAME}
+            jwtSecret: ${env.JWT_SECRET}
+            jwtExpirationMs: ${env.JWT_EXPIRATION_MS}

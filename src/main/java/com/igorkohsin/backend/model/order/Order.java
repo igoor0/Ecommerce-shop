@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document("order")
+@Document("orders")
 public class Order {
     @MongoId
     @Field("id")
@@ -27,4 +27,5 @@ public class Order {
     private LocalDate orderDate;
     @Field("price")
     private double orderPrice;
+    private double orderDiscount;
 }
