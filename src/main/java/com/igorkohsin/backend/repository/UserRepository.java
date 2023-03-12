@@ -13,6 +13,6 @@ import java.util.function.Function;
 
 @Repository
 public interface UserRepository extends MongoRepository<User, String> {
-    @Query("{'email': ?0}")
     Optional<User> findByEmail(String email);
+    boolean existsByEmail(String email);
 }

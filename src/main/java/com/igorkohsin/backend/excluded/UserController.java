@@ -1,7 +1,6 @@
-package com.igorkohsin.backend.controller;
+package com.igorkohsin.backend.excluded;
 
 import com.igorkohsin.backend.model.user.User;
-import com.igorkohsin.backend.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

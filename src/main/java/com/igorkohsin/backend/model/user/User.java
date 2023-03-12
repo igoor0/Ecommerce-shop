@@ -2,12 +2,12 @@ package com.igorkohsin.backend.model.user;
 
 import com.igorkohsin.backend.model.Country;
 import com.igorkohsin.backend.model.role.Role;
-import com.igorkohsin.backend.model.role.Roles;
+import com.igorkohsin.backend.model.token.Token;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.OneToMany;
 import lombok.*;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -18,12 +18,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-@Getter
-@Setter
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "users")
@@ -34,25 +32,32 @@ public class User implements UserDetails {
     private String id;
     private String firstname;
     private String lastname;
-    @NotBlank
-    private String username = firstname + lastname;
     private String address;
     private String city;
-    @Field("zipcode")
     private String zipCode;
-    @NotBlank
     @Email
     private String email;
-    @NotBlank
     private String phoneNumber;
     private String password;
     private Country country = Country.POLAND;
     @Enumerated(EnumType.STRING)
-    private Roles role;
+    private Role role;
+    @OneToMany(mappedBy = "user")
+    private List<Token> tokens;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
     }
 
     @Override

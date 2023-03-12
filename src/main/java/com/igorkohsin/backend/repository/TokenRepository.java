@@ -13,7 +13,7 @@ public interface TokenRepository extends MongoRepository<Token, String> {
       on t.user.id = u.id\s
       where u.id = :id and (t.expired = false or t.revoked = false)\s
       """)
-    List<Token> findAllValidTokenByUser(Integer id);
+    List<Token> findAllValidTokenByUser(String id);
 
     Optional<Token> findByToken(String token);
 }
