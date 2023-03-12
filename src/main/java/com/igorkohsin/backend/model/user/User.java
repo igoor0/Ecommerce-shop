@@ -2,6 +2,7 @@ package com.igorkohsin.backend.model.user;
 
 import com.igorkohsin.backend.model.Country;
 import com.igorkohsin.backend.model.role.Role;
+import jakarta.persistence.Entity;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -18,12 +19,15 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "users")
+@Entity
 public class User {
     @MongoId
     @Field("id")
     private String id;
+    private String firstname;
+    private String lastname;
     @NotBlank
-    private String username;
+    private String username = firstname + lastname;
     private String address;
     private String city;
     @Field("zipcode")
@@ -31,8 +35,6 @@ public class User {
     @NotBlank
     @Email
     private String email;
-    //@NotBlank
-    //private String username = email;
     @NotBlank
     private String phoneNumber;
     private String password;
