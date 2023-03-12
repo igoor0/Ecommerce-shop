@@ -1,7 +1,6 @@
 package com.igorkohsin.backend.controller;
 
-import com.igorkohsin.backend.config.security.jwt.JwtUtils;
-import com.igorkohsin.backend.config.security.services.UserDetailsImpl;
+
 import com.igorkohsin.backend.model.role.Role;
 import com.igorkohsin.backend.model.role.Roles;
 import com.igorkohsin.backend.model.user.User;
