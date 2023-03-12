@@ -1,4 +1,4 @@
-package com.igorkohsin.backend.controller;
+package com.igorkohsin.backend.excluded;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;

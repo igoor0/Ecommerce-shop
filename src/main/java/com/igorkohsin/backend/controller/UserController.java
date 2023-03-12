@@ -14,9 +14,6 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserServiceImpl userServiceImpl;
-
-
-
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userServiceImpl.getAllUsers());
@@ -32,13 +29,13 @@ public class UserController {
 
         return ResponseEntity.ok(userServiceImpl.getUserByEmail(email));}
 
-    /*
-    @PostMapping
-    public ResponseEntity addUser(@RequestBody User user) {
-        userService.addUser(user);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
-    }
-    */
+
+//    @PostMapping
+//    public ResponseEntity addUser(@RequestBody User user) {
+//        userService.addUser(user);
+//        return ResponseEntity.status(HttpStatus.CREATED).build();
+//    }
+
 
     @PutMapping
     public ResponseEntity<Object> updateUser(@RequestBody User user) {

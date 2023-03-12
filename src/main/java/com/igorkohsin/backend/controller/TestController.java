@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping("/all")
     public String allAccess() {
-        return "Public Content.";
+        return "Public Content. This is a message that everyobody might recieve while accesing the website without any additional permissions";
     }
 
     @GetMapping("/user")

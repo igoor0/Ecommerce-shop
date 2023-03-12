@@ -1,4 +1,4 @@
-package com.igorkohsin.backend.controller;
+package com.igorkohsin.backend.excluded;
 
 import com.igorkohsin.backend.service.impl.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

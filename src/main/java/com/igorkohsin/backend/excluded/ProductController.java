@@ -1,4 +1,4 @@
-package com.igorkohsin.backend.controller;
+package com.igorkohsin.backend.excluded;
 
 import com.igorkohsin.backend.service.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;

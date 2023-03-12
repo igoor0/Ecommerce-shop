@@ -22,26 +22,27 @@ public class User {
     @MongoId
     @Field("id")
     private String id;
+    @NotBlank
     private String username;
-    //private String address;
-    //private String city;
-    //@Field("zipcode")
-    //private String zipCode;
+    private String address;
+    private String city;
+    @Field("zipcode")
+    private String zipCode;
     @NotBlank
     @Email
     private String email;
     //@NotBlank
     //private String username = email;
-    //@NotBlank
-    //private String phoneNumber;
+    @NotBlank
+    private String phoneNumber;
     private String password;
-    //private Country country = Country.POLAND;
-//    @Field(name = "enabled")
-//    private boolean isEnabled;
-//    @Field(name = "confirmed")
-//    private boolean isConfirmed;
-//    @Field(name = "expired")
-//    private boolean isExpired;
+    private Country country = Country.POLAND;
+    @Field(name = "enabled")
+    private boolean isEnabled;
+    @Field(name = "confirmed")
+    private boolean isConfirmed;
+    @Field(name = "expired")
+    private boolean isExpired;
     @Field(name = "role")
     @DBRef
     private Set<Role> roles = new HashSet<>();

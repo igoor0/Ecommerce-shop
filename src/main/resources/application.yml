@@ -9,6 +9,7 @@ spring:
     com:
       igorkohsin:
           backend:
+            jwt:
             jwtCookieName: ${env.JWT_COOKIE_NAME}
             jwtSecret: ${env.JWT_SECRET}
             jwtExpirationMs: ${env.JWT_EXPIRATION_MS}
