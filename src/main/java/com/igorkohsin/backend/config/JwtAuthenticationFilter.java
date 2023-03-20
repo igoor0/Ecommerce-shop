@@ -1,5 +1,6 @@
 package com.igorkohsin.backend.config;
 
+import com.igorkohsin.backend.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

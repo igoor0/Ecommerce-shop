@@ -11,17 +11,11 @@ import org.bson.Document;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+@EnableSwagger2
 public class BackendApplication {
 
 	public static void main(String[] args) { SpringApplication.run(BackendApplication.class, args); }
-
-	// jwt - token hasz ustalasz i zapisuje obiekt (model) w
-	// postaci obiekt jsona w postaci ciagow znakow
-	// (to jest algorytm haszujacy)
-	// parametr sorted = wyslesz requesta - dorted=alphabetical i posortuje alfabetycznie i wysle posortowane lol
-	// w jsonie wysle obiekt posortowany
-	// contetnt security policy
-	// owasp security risks
 }

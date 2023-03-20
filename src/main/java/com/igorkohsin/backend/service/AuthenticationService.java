@@ -1,13 +1,14 @@
-package com.igorkohsin.backend.auth;
+package com.igorkohsin.backend.service;
 
-import com.igorkohsin.backend.config.JwtService;
-import com.igorkohsin.backend.exception.ConflictException;
+import com.igorkohsin.backend.webflow.request.AuthenticationRequest;
+import com.igorkohsin.backend.webflow.request.RegisterRequest;
 import com.igorkohsin.backend.model.role.Role;
 import com.igorkohsin.backend.model.token.Token;
 import com.igorkohsin.backend.model.token.TokenType;
 import com.igorkohsin.backend.model.user.User;
 import com.igorkohsin.backend.repository.TokenRepository;
 import com.igorkohsin.backend.repository.UserRepository;
+import com.igorkohsin.backend.webflow.response.AuthenticationResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

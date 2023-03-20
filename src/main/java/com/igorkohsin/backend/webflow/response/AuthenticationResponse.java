@@ -1,4 +1,4 @@
-package com.igorkohsin.backend.auth;
+package com.igorkohsin.backend.webflow.response;
 
 import lombok.*;
 
