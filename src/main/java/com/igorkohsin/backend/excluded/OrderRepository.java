@@ -1,6 +1,5 @@
-package com.igorkohsin.backend.repository;
+package com.igorkohsin.backend.excluded;
 
-import com.igorkohsin.backend.model.order.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

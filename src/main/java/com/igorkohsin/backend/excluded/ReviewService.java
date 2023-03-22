@@ -1,10 +1,11 @@
-package com.igorkohsin.backend.service;
+package com.igorkohsin.backend.excluded;
 
 import com.igorkohsin.backend.model.review.Review;
-import com.igorkohsin.backend.webflow.request.CreateorUpdateReviewRequest;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface ReviewService {
     public void createOrUpdateReview(CreateorUpdateReviewRequest createOrUpdateReviewRequest);
 

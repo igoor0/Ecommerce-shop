@@ -1,13 +1,14 @@
-package com.igorkohsin.backend.service;
+package com.igorkohsin.backend.excluded;
 
-import com.igorkohsin.backend.model.product.Product;
-import com.igorkohsin.backend.webflow.request.CreateProductRequest;
-import com.igorkohsin.backend.webflow.request.UpdateProductRequest;
-import com.igorkohsin.backend.webflow.response.ProductResponse;
+import com.igorkohsin.backend.excluded.Product;
+import com.igorkohsin.backend.excluded.CreateProductRequest;
+import com.igorkohsin.backend.excluded.UpdateProductRequest;
+import com.igorkohsin.backend.excluded.ProductResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import javax.validation.Valid;
+
 
 public interface ProductService {
 

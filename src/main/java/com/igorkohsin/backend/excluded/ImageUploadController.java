@@ -1,4 +1,4 @@
-package com.igorkohsin.backend.controller;
+package com.igorkohsin.backend.excluded;
 
 import com.igorkohsin.backend.exception.RunTimeExceptionPlaceHolder;
 import org.springframework.core.io.ByteArrayResource;

@@ -1,4 +1,4 @@
-package com.igorkohsin.backend.repository;
+package com.igorkohsin.backend.excluded;
 
 import com.igorkohsin.backend.model.review.Review;
 import org.springframework.data.jpa.repository.JpaRepository;

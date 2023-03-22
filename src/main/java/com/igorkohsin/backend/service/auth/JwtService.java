@@ -1,4 +1,4 @@
-package com.igorkohsin.backend.service;
+package com.igorkohsin.backend.service.auth;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

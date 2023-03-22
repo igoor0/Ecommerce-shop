@@ -1,4 +1,4 @@
-package com.igorkohsin.backend.webflow.request;
+package com.igorkohsin.backend.excluded;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,5 @@
-package com.igorkohsin.backend.model.order;
+package com.igorkohsin.backend.excluded;
 
-import com.igorkohsin.backend.model.product.Product;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;

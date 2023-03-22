@@ -1,7 +1,7 @@
-package com.igorkohsin.backend.webflow.request;
+package com.igorkohsin.backend.excluded;
 
-import com.igorkohsin.backend.model.product.Product_category;
-import com.igorkohsin.backend.model.product.Product_sex;
+import com.igorkohsin.backend.excluded.Product_category;
+import com.igorkohsin.backend.excluded.Product_sex;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

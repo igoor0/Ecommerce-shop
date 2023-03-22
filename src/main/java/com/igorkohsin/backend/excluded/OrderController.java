@@ -1,7 +1,7 @@
-package com.igorkohsin.backend.controller;
+package com.igorkohsin.backend.excluded;
 
-import com.igorkohsin.backend.model.order.Order;
-import com.igorkohsin.backend.service.impl.OrderServiceImpl;
+import com.igorkohsin.backend.excluded.Order;
+import com.igorkohsin.backend.excluded.OrderServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

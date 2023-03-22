@@ -1,4 +1,4 @@
-package com.igorkohsin.backend.service;
+package com.igorkohsin.backend.service.auth;
 
 import com.igorkohsin.backend.webflow.request.AuthenticationRequest;
 import com.igorkohsin.backend.webflow.request.RegisterRequest;

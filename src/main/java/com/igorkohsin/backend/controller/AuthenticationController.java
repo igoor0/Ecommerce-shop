@@ -2,9 +2,9 @@ package com.igorkohsin.backend.controller;
 
 import com.igorkohsin.backend.webflow.request.AuthenticationRequest;
 import com.igorkohsin.backend.webflow.response.AuthenticationResponse;
-import com.igorkohsin.backend.service.AuthenticationService;
+import com.igorkohsin.backend.service.auth.AuthenticationService;
 import com.igorkohsin.backend.webflow.request.RegisterRequest;
-import com.igorkohsin.backend.service.LogoutService;
+import com.igorkohsin.backend.service.auth.LogoutService;
 import com.igorkohsin.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
