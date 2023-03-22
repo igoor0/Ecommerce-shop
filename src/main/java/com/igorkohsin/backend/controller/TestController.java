@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
+@PreAuthorize("true")
 @RequestMapping("/api/auth")
 public class TestController {
     @GetMapping("/all")
     public String allAccess() {
-        return "Public Content. This is a message that everyobody might recieve while accesing the website without any additional permissions";
+        return "Public Content. This is a message that everybody might receive while accessing the website without any additional permissions";
     }
 
     @GetMapping("/user")

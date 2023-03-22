@@ -6,23 +6,26 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Document(collection = "tokens")
 public class Token {
-    @MongoId
+    @Id
     public String id;
-    @Column(unique = true)
+    @Indexed(unique = true)
     public String token;
     @Enumerated(EnumType.STRING)
     public TokenType tokenType = TokenType.BEARER;
     public boolean revoked;
     public boolean expired;
-    @ManyToOne
-    @JoinColumn(name = "id")
+    @DBRef
     public User user;
 }
+

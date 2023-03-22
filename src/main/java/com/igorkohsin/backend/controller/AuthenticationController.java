@@ -1,7 +1,8 @@
 package com.igorkohsin.backend.controller;
 
+import com.igorkohsin.backend.model.user.User;
 import com.igorkohsin.backend.webflow.request.AuthenticationRequest;
-import com.igorkohsin.backend.webflow.response.AuthenticationResponse;
+import com.igorkohsin.backend.webflow.response.RegisterResponse;
 import com.igorkohsin.backend.service.auth.AuthenticationService;
 import com.igorkohsin.backend.webflow.request.RegisterRequest;
 import com.igorkohsin.backend.service.auth.LogoutService;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/auth")
@@ -24,19 +26,28 @@ public class AuthenticationController {
     private final LogoutService logoutService;
 
     @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(@Valid @RequestBody RegisterRequest request) {
+    public ResponseEntity<RegisterResponse> register(@Valid @RequestBody RegisterRequest request) {
         if (userRepository.existsByEmail(request.getEmail())) {
             return ResponseEntity
                     .badRequest()
-                    .body(new AuthenticationResponse("Error: Username is already taken!"));
+                    .body(new RegisterResponse("","Email is already registered!"));
         } else return ResponseEntity.ok(service.register(request));
     }
 
 
-    //TODO Check if user exists in database before registration
-
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate( @Valid @RequestBody AuthenticationRequest request) {
+    public ResponseEntity<RegisterResponse> authenticate(@Valid @RequestBody AuthenticationRequest request) {
+        if (!userRepository.existsByEmail(request.getEmail())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new RegisterResponse("", "Email doesn't exist"));
+        } Optional<User> user = userRepository.findByEmail(request.getEmail());
+        boolean isPasswordCorrect = service.verifyPassword(request.getPassword(), service.getPassword(request.getEmail()));
+
+        if (!isPasswordCorrect) {
+            return ResponseEntity.badRequest().body(new RegisterResponse("", "Incorrect password"));
+        }
+
         return ResponseEntity.ok(service.authenticate(request));
     }
 }
