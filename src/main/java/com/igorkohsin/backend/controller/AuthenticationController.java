@@ -34,7 +34,6 @@ public class AuthenticationController {
         } else return ResponseEntity.ok(service.register(request));
     }
 
-
     @PostMapping("/authenticate")
     public ResponseEntity<RegisterResponse> authenticate(@Valid @RequestBody AuthenticationRequest request) {
         if (!userRepository.existsByEmail(request.getEmail())) {
